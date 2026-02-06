@@ -1,0 +1,20 @@
+# Network Configuration
+
+# Change these values based on your network requirements
+
+network:
+  name: "MyBluetoothMesh"
+  id: 1234567890
+  ttl: 60
+
+nodes:
+  - id: 1
+    address: 0x0001
+    provisioned: true
+  - id: 2
+    address: 0x0002
+    provisioned: true
+  - id: 3
+    address: 0x0003
+    provisioned: false
+    
