@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+# Virtual environment
+*.egg-info/
+*.eggs/
+# Distribution / packaging
+.Python
+build/
+dist/
+*.whl
+# PyInstaller
+#  Often Python files are frozen into executables, so the build dir can be included.
+#  Additionally, some folders of python projects include the source to the program as well
+#  as the PyInstaller scripts, but the PyInstaller scripts should not be included in the
+#  distributable, hence this exclusion.
+build/
+dist/
+*.spec
+# Test and coverage
+.coverage
+*.cover
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+# MyPy
+.mypy_cache/
+.mypy_data/
+# Pytest
+.cache
+# Sphinx documentation
+docs/_build/
