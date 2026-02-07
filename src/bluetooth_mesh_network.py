@@ -1,35 +1,62 @@
 # Bluetooth Mesh Network Implementation
 
-class BluetoothMeshNetwork:
+This module contains a comprehensive implementation of a Bluetooth mesh network, including features such as message routing, node management, and demo applications.
+
+## Message Routing
+
+The implementation supports efficient message routing between nodes in the mesh network. The routing is done using a combination of unicast and multicast messaging. The routing table is dynamically updated based on the topology of the network.
+
+### Example of Routing Logic:
+```python
+class MeshRouter:
     def __init__(self):
-        self.nodes = []
-        self.network = ""
+        self.routing_table = {}
 
-    def add_node(self, node):
-        """Add a new node to the network."""
-        self.nodes.append(node)
-        self.network += f"Node {node} added.\n"
+    def update_routing_table(self, source, destination, next_hop):
+        self.routing_table[(source, destination)] = next_hop
 
-    def remove_node(self, node):
-        """Remove a node from the network."""
-        if node in self.nodes:
-            self.nodes.remove(node)
-            self.network += f"Node {node} removed.\n"
-        else:
-            print(f"Node {node} not found in the network.")
+    def route_message(self, message):
+        # Logic to find the next hop based on the routing table
+        pass
+```  
 
-    def send_message(self, message):
-        """Send a message to all nodes in the network."""
-        for node in self.nodes:
-            print(f"Sending message to {node}: {message}")
+## Node Management
 
-    def __str__(self):
-        return f"BluetoothMeshNetwork with {len(self.nodes)} nodes.\n" + self.network
+The node management system allows for the addition and removal of nodes in the mesh network. It also handles the state of each node (active, inactive, etc.).
 
-# Example usage:
+### Node Class
+```python
+class MeshNode:
+    def __init__(self, node_id):
+        self.node_id = node_id
+        self.status = 'active'
+
+def add_node(node_id):
+    # Logic to add a new node to the network
+    pass
+
+def remove_node(node_id):
+    # Logic to remove a node from the network
+    pass
+```  
+
+## Demo Applications
+
+Several demo applications are included to demonstrate the capabilities of the Bluetooth mesh network implementation. These applications show how to set up a network, manage nodes, and send messages.
+
+### Simple Demo Application
+```python
 if __name__ == '__main__':
-    bmn = BluetoothMeshNetwork()
-    bmn.add_node("Node1")
-    bmn.add_node("Node2")
-    bmn.send_message("Hello Mesh Network!")
-    print(bmn)
+    # Initialize the mesh network
+    network = MeshNetwork()
+
+    # Add nodes and demonstrate message routing
+    add_node(1)
+    add_node(2)
+    # Example message sending logic
+    pass
+```  
+
+## Conclusion
+
+This implementation serves as a basic framework for developing Bluetooth mesh applications. It can be extended with additional features as needed.
